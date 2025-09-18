@@ -29,3 +29,8 @@ export async function getMoviesByCategory(category: MovieCategoryType): Promise<
 export async function getMovieDetails(id: number): Promise<MovieDetails> {
   return await fetchFromAPI(`/movie/${id}`)
 }
+
+export function getImageUrl(path: string | null): string {
+    if (!path) return '/no-image.jpg'
+    return `https://image.tmdb.org/t/p/w500${path}`
+  }

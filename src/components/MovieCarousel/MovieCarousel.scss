@@ -1,0 +1,61 @@
+.movie-carousel {
+    margin-bottom: 40px;
+    
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+    
+    &__container {
+      padding: 0 20px;
+    }
+    
+    &__scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: #333;
+        border-radius: 3px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: #666;
+        border-radius: 3px;
+      }
+      
+      &::-webkit-scrollbar-thumb:hover {
+        background: #888;
+      }
+    }
+    
+    &--popular {
+      .movie-carousel__title {
+        color: #e50914;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+    
+    &--top_rated {
+      .movie-carousel__title {
+        color: #ffd700;
+        font-family: 'Georgia', serif;
+      }
+    }
+    
+    &--upcoming {
+      .movie-carousel__title {
+        color: #00d4aa;
+        font-family: 'Arial', sans-serif;
+      }
+    }
+  }
