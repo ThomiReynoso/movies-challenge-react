@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header/Header'
 import './App.scss'
+import { TestPage } from './pages/TestPage'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
           <Header />
           <main className="app__main">
             <Routes>
-              <Route path="/" />
+              <Route path="/" element={<TestPage/>}/>
               <Route path="/movie/:id" />
               <Route path="/wishlist"/>
             </Routes>
