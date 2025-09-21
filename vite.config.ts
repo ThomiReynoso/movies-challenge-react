@@ -24,6 +24,13 @@ export default defineConfig({
     }
   },
   ssr: {
-    noExternal: ['react-router-dom']
+    noExternal: ['react-router-dom', '@reduxjs/toolkit', 'react-redux'],
+    external: []
+  },
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    include: ['react-router-dom']
   }
 })
