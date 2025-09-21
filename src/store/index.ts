@@ -1,18 +1,18 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import wishlistReducer from './wishlistSlice'
 
-// Función para crear store (para SSR)
-export const createStore = (preloadedState?: any) => {
+const rootReducer = combineReducers({
+  wishlist: wishlistReducer
+})
+
+export const createStore = (preloadedState?: Partial<RootState>) => {
   return configureStore({
-    reducer: {
-      wishlist: wishlistReducer
-    },
+    reducer: rootReducer,
     preloadedState
   })
 }
 
-// Store por defecto para cliente
 export const store = createStore()
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof rootReducer>
 export type AppDispatch = typeof store.dispatch
