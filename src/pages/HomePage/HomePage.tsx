@@ -4,7 +4,7 @@ import './HomePage.scss'
 
 import { getMoviesByCategory } from '../../api/movieApi'
 import { MovieCarousel } from '../../components/MovieCarousel/MovieCarousel'
-import { MovieCategory, type Movie } from '../../types'
+import { MovieCategory, type Movie, type MovieCategoryType } from '../../types'
 
 export function HomePage() {
   const navigate = useNavigate()
@@ -36,8 +36,8 @@ export function HomePage() {
     loadMovies()
   }, [])
 
-  const handleMovieClick = (movie: Movie) => {
-    navigate(`/movie/${movie.id}`)
+  const handleMovieClick = (movie: Movie, category: MovieCategoryType) => {
+    navigate(`/movie/${movie.id}`, { state: { category } })
   }
 
   if (loading) {
@@ -72,21 +72,21 @@ export function HomePage() {
         title="Popular Movies"
         movies={popularMovies}
         category={MovieCategory.POPULAR}
-        onMovieClick={handleMovieClick}
+        onMovieClick={(movie) => handleMovieClick(movie, MovieCategory.POPULAR)}
       />
       
       <MovieCarousel
         title="Top Rated Movies"
         movies={topRatedMovies}
         category={MovieCategory.TOP_RATED}
-        onMovieClick={handleMovieClick}
+        onMovieClick={(movie) => handleMovieClick(movie, MovieCategory.TOP_RATED)}
       />
       
       <MovieCarousel
         title="Upcoming Movies"
         movies={upcomingMovies}
         category={MovieCategory.UPCOMING}
-        onMovieClick={handleMovieClick}
+        onMovieClick={(movie) => handleMovieClick(movie, MovieCategory.UPCOMING)}
       />
     </div>
   )

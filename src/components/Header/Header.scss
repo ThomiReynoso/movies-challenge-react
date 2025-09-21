@@ -20,7 +20,7 @@
     &__logo {
       font-size: 24px;
       font-weight: 700;
-      color: #e50914;
+      color: $popular-color;
       text-decoration: none;
     }
     
@@ -36,7 +36,7 @@
       transition: color 0.2s ease;
       
       &:hover {
-        color: #e50914;
+        color: $popular-color;
       }
     }
   }
