@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    
+    &__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    &__logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #e50914;
+      text-decoration: none;
+    }
+    
+    &__nav {
+      display: flex;
+      gap: 24px;
+    }
+    
+    &__link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #e50914;
+      }
+    }
+  }
