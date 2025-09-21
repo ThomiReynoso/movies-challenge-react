@@ -63,36 +63,44 @@
     }
     
     &--popular {
+      @include category-theme('popular');
+      
       .movie-carousel__title {
-        color: #e50914;
-        font-family: 'Roboto', sans-serif;
+        color: var(--category-color);
+        font-family: var(--category-font);
       }
       
       .movie-carousel__nav:hover {
-        background: #e50914;
+        background: var(--category-color);
+        color: white;
       }
     }
     
     &--top_rated {
+      @include category-theme('top_rated');
+      
       .movie-carousel__title {
-        color: #ffd700;
-        font-family: 'Georgia', serif;
+        color: var(--category-color);
+        font-family: var(--category-font);
       }
       
       .movie-carousel__nav:hover {
-        background: #ffd700;
+        background: var(--category-color);
         color: black;
       }
     }
     
     &--upcoming {
+      @include category-theme('upcoming');
+      
       .movie-carousel__title {
-        color: #00d4aa;
-        font-family: 'Arial', sans-serif;
+        color: var(--category-color);
+        font-family: var(--category-font);
       }
       
       .movie-carousel__nav:hover {
-        background: #00d4aa;
+        background: var(--category-color);
+        color: white;
       }
     }
   }

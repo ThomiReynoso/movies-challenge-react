@@ -208,66 +208,72 @@
   
   // Category-specific theming
   &--popular {
+    @include category-theme('popular');
+    
     .movie-detail__title {
-      color: #e50914;
-      font-family: 'Roboto', sans-serif;
+      color: var(--category-color);
+      font-family: var(--category-font);
     }
     
     .movie-detail__back-button:hover {
-      background: rgba(229, 9, 20, 0.2);
+      background: var(--category-bg-alpha);
     }
     
     .movie-detail__genre {
-      background: rgba(229, 9, 20, 0.2);
+      background: var(--category-bg-alpha);
     }
     
     .movie-detail__overview h3,
     .movie-detail__production h3,
     .movie-detail__languages h3 {
-      color: #e50914;
+      color: var(--category-color);
     }
   }
   
   &--top_rated {
+    @include category-theme('top_rated');
+    
     .movie-detail__title {
-      color: #ffd700;
-      font-family: 'Georgia', serif;
+      color: var(--category-color);
+      font-family: var(--category-font);
     }
     
     .movie-detail__back-button:hover {
-      background: rgba(255, 215, 0, 0.2);
+      background: var(--category-bg-alpha);
     }
     
     .movie-detail__genre {
-      background: rgba(253, 244, 0, 0.4);
+      background: var(--category-bg-alpha-strong);
       color: #000;
     }
     
     .movie-detail__overview h3,
     .movie-detail__production h3,
     .movie-detail__languages h3 {
-      color: #ffd700;
+      color: var(--category-color);
     }
   }
   
   &--upcoming {
+    @include category-theme('upcoming');
+    
     .movie-detail__title {
-      color: #00d4aa;
-      font-family: 'Arial', sans-serif;
+      color: var(--category-color);
+      font-family: var(--category-font);
     }
     
     .movie-detail__back-button:hover {
-      background: rgba(0, 212, 170, 0.2);
+      background: var(--category-bg-alpha);
     }
     
     .movie-detail__genre {
-      background: rgba(0, 212, 170, 0.2);
+      background: var(--category-bg-alpha);
     }
     
     .movie-detail__overview h3,
     .movie-detail__production h3,
     .movie-detail__languages h3 {
-      color: #00d4aa;
+      color: var(--category-color);
     }
   }
 }

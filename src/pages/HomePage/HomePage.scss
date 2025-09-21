@@ -12,7 +12,7 @@
         font-weight: 700;
         color: white;
         margin-bottom: 16px;
-        background: linear-gradient(135deg, #e50914, #ffd700, #00d4aa);
+        background: linear-gradient(135deg, $popular-color, $top-rated-color, $upcoming-color);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
