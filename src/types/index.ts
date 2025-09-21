@@ -10,6 +10,10 @@ export interface Movie {
 export interface MovieDetails extends Movie {
     runtime: number
     genres: { id: number; name: string }[]
+    backdrop_path: string | null
+    tagline: string
+    production_companies: { name: string }[]
+    spoken_languages: { name: string }[]
 }
 
 export const MovieCategory = {

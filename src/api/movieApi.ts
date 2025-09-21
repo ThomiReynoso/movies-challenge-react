@@ -30,7 +30,7 @@ export async function getMovieDetails(id: number): Promise<MovieDetails> {
   return await fetchFromAPI(`/movie/${id}`)
 }
 
-export function getImageUrl(path: string | null): string {
+export function getImageUrl(path: string | null, size: string = 'w500'): string {
     if (!path) return '/no-image.jpg'
-    return `https://image.tmdb.org/t/p/w500${path}`
+    return `https://image.tmdb.org/t/p/${size}${path}`
   }
