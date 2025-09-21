@@ -54,29 +54,32 @@
   
   &__main {
     display: flex;
+    flex-direction: column;
     gap: 40px;
     
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 20px;
+    @media (min-width: 769px) {
+      flex-direction: row;
+      gap: 40px;
     }
   }
   
   &__poster {
-    flex-shrink: 0;
+    flex: 1;
     
     &-image {
-      width: 300px;
-      height: 450px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2/3;
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
+      display: block;
       
-      @media (max-width: 768px) {
+      @media (min-width: 769px) {
         width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-        display: block;
+        height: auto;
+        max-height: 600px;
       }
     }
   }
@@ -139,17 +142,21 @@
     color: white;
   }
   
+  &__sections {
+    margin-top: 40px;
+  }
+
   &__overview, &__production, &__languages {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     
     h3 {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 600;
-      margin: 0 0 8px 0;
+      margin: 0 0 12px 0;
     }
     
     p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.6;
       color: #e0e0e0;
       margin: 0;
@@ -223,10 +230,12 @@
       background: var(--category-bg-alpha);
     }
     
-    .movie-detail__overview h3,
-    .movie-detail__production h3,
-    .movie-detail__languages h3 {
-      color: var(--category-color);
+    .movie-detail__sections {
+      .movie-detail__overview h3,
+      .movie-detail__production h3,
+      .movie-detail__languages h3 {
+        color: var(--category-color);
+      }
     }
   }
   
@@ -247,10 +256,12 @@
       color: #000;
     }
     
-    .movie-detail__overview h3,
-    .movie-detail__production h3,
-    .movie-detail__languages h3 {
-      color: var(--category-color);
+    .movie-detail__sections {
+      .movie-detail__overview h3,
+      .movie-detail__production h3,
+      .movie-detail__languages h3 {
+        color: var(--category-color);
+      }
     }
   }
   
@@ -270,10 +281,12 @@
       background: var(--category-bg-alpha);
     }
     
-    .movie-detail__overview h3,
-    .movie-detail__production h3,
-    .movie-detail__languages h3 {
-      color: var(--category-color);
+    .movie-detail__sections {
+      .movie-detail__overview h3,
+      .movie-detail__production h3,
+      .movie-detail__languages h3 {
+        color: var(--category-color);
+      }
     }
   }
 }

@@ -116,26 +116,28 @@ export function MovieDetailPage() {
                 </span>
               ))}
             </div>
-
-            <div className="movie-detail__overview">
-              <h3>Overview</h3>
-              <p>{movie.overview}</p>
-            </div>
-
-            {movie.production_companies.length > 0 && (
-              <div className="movie-detail__production">
-                <h3>Production</h3>
-                <p>{movie.production_companies.map(company => company.name).join(', ')}</p>
-              </div>
-            )}
-
-            {movie.spoken_languages.length > 0 && (
-              <div className="movie-detail__languages">
-                <h3>Languages</h3>
-                <p>{movie.spoken_languages.map(lang => lang.name).join(', ')}</p>
-              </div>
-            )}
           </div>
+        </div>
+
+        <div className="movie-detail__sections">
+          <div className="movie-detail__overview">
+            <h3>Overview</h3>
+            <p>{movie.overview}</p>
+          </div>
+
+          {movie.production_companies.length > 0 && (
+            <div className="movie-detail__production">
+              <h3>Production</h3>
+              <p>{movie.production_companies.map(company => company.name).join(', ')}</p>
+            </div>
+          )}
+
+          {movie.spoken_languages.length > 0 && (
+            <div className="movie-detail__languages">
+              <h3>Languages</h3>
+              <p>{movie.spoken_languages.map(lang => lang.name).join(', ')}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
