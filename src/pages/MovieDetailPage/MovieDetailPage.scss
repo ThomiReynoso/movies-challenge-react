@@ -69,7 +69,6 @@
     &-image {
       width: 100%;
       height: auto;
-      aspect-ratio: 2/3;
       object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -79,7 +78,7 @@
       @media (min-width: 769px) {
         width: 100%;
         height: auto;
-        max-height: 600px;
+        max-height: 750px;
       }
     }
   }
@@ -140,6 +139,39 @@
     border-radius: 20px;
     font-size: 14px;
     color: white;
+  }
+
+  &__wishlist-button {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      background: rgba($popular-color, 0.2);
+      border-color: $popular-color;
+      color: $popular-color;
+
+      &:hover {
+        background: rgba($popular-color, 0.3);
+        color: white;
+      }
+    }
   }
   
   &__sections {

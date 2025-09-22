@@ -8,12 +8,59 @@
       transform: scale(1.05);
     }
     
+    &__image-container {
+      position: relative;
+      margin-bottom: 8px;
+      
+      &:hover {
+        .movie-card__wishlist-button {
+          opacity: 1;
+        }
+      }
+    }
+
     &__image {
       width: 100%;
       height: 300px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 8px;
+    }
+
+    &__wishlist-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 36px;
+      height: 36px;
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.2s ease;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: scale(1.1);
+      }
+
+      &--active {
+        opacity: 1;
+        background: rgba($popular-color, 0.8);
+        
+        &:hover {
+          background: $popular-color;
+        }
+      }
+
+      @media (max-width: 768px) {
+        opacity: 1;
+      }
     }
     
     &__info {

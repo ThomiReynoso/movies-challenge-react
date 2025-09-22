@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { getMovieDetails, getImageUrl } from '../../api/movieApi'
+import { useAppSelector, useAppDispatch } from '../../hooks/redux'
+import { selectIsMovieInWishlist } from '../../store/selectors'
+import { toggleWishlist } from '../../store/wishlistSlice'
 import { type MovieDetails, type MovieCategoryType, MovieCategory } from '../../types'
 import './MovieDetailPage.scss'
 
@@ -8,12 +11,16 @@ export function MovieDetailPage() {
   const { id } = useParams<{ id: string }>()
   const location = useLocation()
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
   
   const [movie, setMovie] = useState<MovieDetails | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   
   const category = location.state?.category as MovieCategoryType || MovieCategory.POPULAR
+  const isInWishlist = useAppSelector(state => 
+    movie ? selectIsMovieInWishlist(state, movie.id) : false
+  )
 
   useEffect(() => {
     async function loadMovieDetails() {
@@ -35,6 +42,12 @@ export function MovieDetailPage() {
 
   const handleGoBack = () => {
     navigate(-1)
+  }
+
+  const handleWishlistToggle = () => {
+    if (movie) {
+      dispatch(toggleWishlist(movie))
+    }
   }
 
   if (loading) {
@@ -116,6 +129,13 @@ export function MovieDetailPage() {
                 </span>
               ))}
             </div>
+
+            <button
+              className={`movie-detail__wishlist-button ${isInWishlist ? 'movie-detail__wishlist-button--active' : ''}`}
+              onClick={handleWishlistToggle}
+            >
+              {isInWishlist ? '❤️ Remove from Wishlist' : '🤍 Add to Wishlist'}
+            </button>
           </div>
         </div>
 
