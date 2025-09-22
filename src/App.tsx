@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { Header } from './components/Header/Header'
 import './App.scss'
 import { HomePage } from './pages/HomePage/HomePage'
@@ -8,18 +8,16 @@ import { WishlistPage } from './pages/WishlistPage/WishlistPage'
 
 function App() {
   return (
-      <Router>
-        <div className="app">
-          <Header />
-          <main className="app__main">
-            <Routes>
-              <Route path="/" element={<HomePage/>}/>
-              <Route path="/movie/:id" element={<MovieDetailPage/>}/>
-              <Route path="/wishlist" element={<WishlistPage/>}/>
-            </Routes>
-          </main>
-        </div>
-      </Router>
+    <div className="app">
+      <Header />
+      <main className="app__main">
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/movie/:id" element={<MovieDetailPage/>}/>
+          <Route path="/wishlist" element={<WishlistPage/>}/>
+        </Routes>
+      </main>
+    </div>
   )
 }
 export default App
