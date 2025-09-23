@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
 import { getMovieDetails, getImageUrl } from '../../api/movieApi'
-import { useAppSelector, useAppDispatch } from '../../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../../store/redux'
 import { selectIsMovieInWishlist } from '../../store/selectors'
 import { toggleWishlist } from '../../store/wishlistSlice'
 import { type MovieDetails, type MovieCategoryType, MovieCategory } from '../../types'

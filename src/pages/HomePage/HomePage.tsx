@@ -18,9 +18,9 @@ export function HomePage() {
     async function loadMovies() {
       try {
         const [popular, topRated, upcoming] = await Promise.all([
-          getMoviesByCategory(MovieCategory.POPULAR),
-          getMoviesByCategory(MovieCategory.TOP_RATED),
-          getMoviesByCategory(MovieCategory.UPCOMING)
+          getMoviesByCategory(MovieCategory.POPULAR, 20),
+          getMoviesByCategory(MovieCategory.TOP_RATED, 20),
+          getMoviesByCategory(MovieCategory.UPCOMING, 20)
         ])
         
         setPopularMovies(popular)
