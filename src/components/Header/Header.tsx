@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useAppSelector } from '../../hooks/redux'
+import { useAppSelector } from '../../store/redux'
 import { selectWishlistCount } from '../../store/selectors'
 import './Header.scss'
 

@@ -15,7 +15,7 @@ async function fetchFromAPI(endpoint: string) {
   return response.json()
 }
 
-export async function getMoviesByCategory(category: MovieCategoryType): Promise<Movie[]> {
+export async function getMoviesByCategory(category: MovieCategoryType, limit: number = 10): Promise<Movie[]> {
   const endpoints = {
     [MovieCategory.POPULAR]: '/movie/popular',
     [MovieCategory.TOP_RATED]: '/movie/top_rated', 
@@ -23,7 +23,7 @@ export async function getMoviesByCategory(category: MovieCategoryType): Promise<
   }
   
   const data = await fetchFromAPI(endpoints[category])
-  return data.results.slice(0, 10)
+  return data.results.slice(0, limit)
 }
 
 export async function getMovieDetails(id: number): Promise<MovieDetails> {

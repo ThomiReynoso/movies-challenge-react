@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useAppSelector, useAppDispatch } from '../../hooks/redux'
+import { useAppSelector, useAppDispatch } from '../../store/redux'
 import { selectWishlistMovies } from '../../store/selectors'
 import { removeFromWishlist, clearWishlist } from '../../store/wishlistSlice'
 import { MovieCard } from '../../components/MovieCard/MovieCard'

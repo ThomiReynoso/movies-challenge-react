@@ -1,7 +1,7 @@
 
 import type { Movie } from '../../types'
 import { getImageUrl } from '../../api/movieApi'
-import { useAppSelector, useAppDispatch } from '../../hooks/redux'
+import { useAppSelector, useAppDispatch } from '../../store/redux'
 import { selectIsMovieInWishlist } from '../../store/selectors'
 import { toggleWishlist } from '../../store/wishlistSlice'
 import './MovieCard.scss'
