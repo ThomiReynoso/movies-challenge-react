@@ -1,0 +1,30 @@
+// Category Theme Variables
+$popular-color: #e50914;
+$popular-secondary: #b00710;
+$popular-font: 'Roboto', sans-serif;
+
+$top-rated-color: #ffd700;
+$top-rated-font: 'Georgia', serif;
+
+$upcoming-color: #00d4aa;
+$upcoming-font: 'Arial', sans-serif;
+
+// Category Theme Mixins
+@mixin category-theme($category) {
+  @if $category == 'popular' {
+    --category-color: #{$popular-color};
+    --category-font: #{$popular-font};
+    --category-bg-alpha: #{rgba($popular-color, 0.2)};
+    --category-bg-alpha-strong: #{rgba($popular-color, 0.4)};
+  } @else if $category == 'top_rated' {
+    --category-color: #{$top-rated-color};
+    --category-font: #{$top-rated-font};
+    --category-bg-alpha: #{rgba($top-rated-color, 0.2)};
+    --category-bg-alpha-strong: #{rgba($top-rated-color, 0.4)};
+  } @else if $category == 'upcoming' {
+    --category-color: #{$upcoming-color};
+    --category-font: #{$upcoming-font};
+    --category-bg-alpha: #{rgba($upcoming-color, 0.2)};
+    --category-bg-alpha-strong: #{rgba($upcoming-color, 0.4)};
+  }
+}

@@ -12,7 +12,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/styles/variables.scss";`
+        additionalData: `@use "@/styles/variables.scss" as *;`
       }
     }
   },
@@ -21,9 +21,17 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html')
       }
-    }
+    },
+    ssrManifest: true
   },
   ssr: {
-    noExternal: ['react-router-dom']
+    noExternal: ['react-router-dom', '@reduxjs/toolkit', 'react-redux'],
+    external: []
+  },
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    include: ['react-router-dom']
   }
 })

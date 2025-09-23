@@ -28,3 +28,8 @@ Thumbs.db
 # Logs
 logs
 *.log
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output

@@ -1,0 +1,106 @@
+.movie-carousel {
+    margin-bottom: 40px;
+    
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      padding-left: 20px;
+    }
+    
+    &__container {
+      position: relative;
+      padding: 0 60px;
+      
+      &:hover {
+        .movie-carousel__nav {
+          opacity: 1;
+        }
+      }
+    }
+    
+    &__scroll {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scroll-behavior: smooth;
+      
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    
+    &__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      color: black;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+      opacity: 0;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      &--left {
+        left: 10px;
+      }
+      
+      &--right {
+        right: 10px;
+      }
+    }
+    
+    &--popular {
+      @include category-theme('popular');
+      
+      .movie-carousel__title {
+        color: var(--category-color);
+        font-family: var(--category-font);
+      }
+      
+      .movie-carousel__nav:hover {
+        background: var(--category-color);
+        color: white;
+      }
+    }
+    
+    &--top_rated {
+      @include category-theme('top_rated');
+      
+      .movie-carousel__title {
+        color: var(--category-color);
+        font-family: var(--category-font);
+      }
+      
+      .movie-carousel__nav:hover {
+        background: var(--category-color);
+        color: black;
+      }
+    }
+    
+    &--upcoming {
+      @include category-theme('upcoming');
+      
+      .movie-carousel__title {
+        color: var(--category-color);
+        font-family: var(--category-font);
+      }
+      
+      .movie-carousel__nav:hover {
+        background: var(--category-color);
+        color: white;
+      }
+    }
+  }
