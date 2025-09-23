@@ -21,7 +21,8 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html')
       }
-    }
+    },
+    ssrManifest: true
   },
   ssr: {
     noExternal: ['react-router-dom', '@reduxjs/toolkit', 'react-redux'],
