@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758623870760" clover="3.2.0">
-  <project timestamp="1758623870760" name="All files">
-    <metrics statements="656" coveredstatements="249" conditionals="57" coveredconditionals="35" methods="37" coveredmethods="19" elements="750" coveredelements="303" complexity="0" loc="656" ncloc="656" packages="13" files="19" classes="19"/>
+<coverage generated="1758633190998" clover="3.2.0">
+  <project timestamp="1758633190998" name="All files">
+    <metrics statements="656" coveredstatements="249" conditionals="57" coveredconditionals="35" methods="37" coveredmethods="19" elements="750" coveredelements="303" complexity="0" loc="656" ncloc="656" packages="12" files="19" classes="19"/>
     <package name="movies-challenge-react">
       <metrics statements="65" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="server.js" path="/Users/thom/myprojects/movies-challenge-react/server.js">
@@ -314,15 +314,6 @@
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="movies-challenge-react.src.hooks">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="redux.ts" path="/Users/thom/myprojects/movies-challenge-react/src/hooks/redux.ts">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
       </file>
     </package>
     <package name="movies-challenge-react.src.pages">
@@ -673,7 +664,7 @@
       </file>
     </package>
     <package name="movies-challenge-react.src.store">
-      <metrics statements="56" coveredstatements="44" conditionals="15" coveredconditionals="14" methods="8" coveredmethods="7"/>
+      <metrics statements="59" coveredstatements="47" conditionals="15" coveredconditionals="14" methods="8" coveredmethods="7"/>
       <file name="index.ts" path="/Users/thom/myprojects/movies-challenge-react/src/store/index.ts">
         <metrics statements="12" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
@@ -688,6 +679,12 @@
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="redux.ts" path="/Users/thom/myprojects/movies-challenge-react/src/store/redux.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
       </file>
       <file name="selectors.ts" path="/Users/thom/myprojects/movies-challenge-react/src/store/selectors.ts">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
