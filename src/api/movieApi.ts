@@ -1,8 +1,12 @@
 import type { Movie, MovieDetails, MovieCategoryType } from '../types/index'
 import { MovieCategory } from '../types/index'
 
-const API_KEY = 'b66cb063a2a90c7626312034cd9d42b2'
-const BASE_URL = 'https://api.themoviedb.org/3'
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY
+const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL || 'https://api.themoviedb.org/3'
+
+if (!API_KEY) {
+  throw new Error('VITE_TMDB_API_KEY is required. Please check your .env file.')
+}
 
 async function fetchFromAPI(endpoint: string) {
   const url = `${BASE_URL}${endpoint}?api_key=${API_KEY}`
